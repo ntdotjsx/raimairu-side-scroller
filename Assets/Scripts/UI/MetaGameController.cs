@@ -1,8 +1,8 @@
-using Platformer.Mechanics;
-using Platformer.UI;
+using ntdotjsx.Mechanics;
+using ntdotjsx.UI;
 using UnityEngine;
 
-namespace Platformer.UI
+namespace ntdotjsx.UI
 {
     public class MetaGameController : MonoBehaviour
     {

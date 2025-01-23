@@ -1,13 +1,13 @@
-using Platformer.Core;
-using Platformer.Model;
+using ntdotjsx.Core;
+using ntdotjsx.Model;
 using UnityEngine;
 
-namespace Platformer.Mechanics
+namespace ntdotjsx.Mechanics
 {
     public class GameController : MonoBehaviour
     {
         public static GameController Instance { get; private set; }
-        public PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        public ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         void OnEnable()
         {

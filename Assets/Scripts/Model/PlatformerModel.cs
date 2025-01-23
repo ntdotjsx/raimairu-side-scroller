@@ -1,10 +1,10 @@
-using Platformer.Mechanics;
+using ntdotjsx.Mechanics;
 using UnityEngine;
 
-namespace Platformer.Model
+namespace ntdotjsx.Model
 {
     [System.Serializable]
-    public class PlatformerModel
+    public class ntdotjsxModel
     {
         public Cinemachine.CinemachineVirtualCamera virtualCamera;
         public PlayerController player;

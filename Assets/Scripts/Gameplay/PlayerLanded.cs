@@ -1,7 +1,7 @@
-using Platformer.Core;
-using Platformer.Mechanics;
+using ntdotjsx.Core;
+using ntdotjsx.Mechanics;
 
-namespace Platformer.Gameplay
+namespace ntdotjsx.Gameplay
 {
     public class PlayerLanded : Simulation.Event<PlayerLanded>
     {

@@ -1,19 +1,21 @@
 using ntdotjsx.Core;
 using ntdotjsx.Mechanics;
 using ntdotjsx.Model;
+using UnityEngine;
+using static ntdotjsx.Core.Simulation;
 
 namespace ntdotjsx.Gameplay
 {
-    public class PlayerEnteredVictoryZone : Simulation.Event<PlayerEnteredVictoryZone>
+    public class PlayerItemCollision : Simulation.Event<PlayerItemCollision>
     {
-        public VictoryZone victoryZone;
+        public ItemController item;
+        public PlayerController player;
 
         ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         public override void Execute()
         {
-            model.player.animator.SetTrigger("victory");
-            model.player.controlEnabled = false;
+
         }
     }
 }

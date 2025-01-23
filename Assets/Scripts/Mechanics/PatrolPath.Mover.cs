@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Platformer.Mechanics
+namespace ntdotjsx.Mechanics
 {
     public partial class PatrolPath
     {

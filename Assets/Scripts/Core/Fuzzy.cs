@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Platformer.Core
+namespace ntdotjsx.Core
 {
     /// <summary>
     /// Fuzzy provides methods for using values +- an amount of random deviation, or fuzz.

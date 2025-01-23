@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Platformer.Core
+namespace ntdotjsx.Core
 {
     public static partial class Simulation
     {

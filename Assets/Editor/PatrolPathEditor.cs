@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Platformer.Mechanics;
+using ntdotjsx.Mechanics;
 using UnityEditor;
 using UnityEngine;
-namespace Platformer
+namespace ntdotjsx
 {
     [CustomEditor(typeof(PatrolPath))]
     public class PatrolPathGizmo : Editor

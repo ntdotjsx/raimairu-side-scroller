@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Platformer.UI
+namespace ntdotjsx.UI
 {
     public class MainUIController : MonoBehaviour
     {

@@ -1,17 +1,17 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using Platformer.Model;
+using ntdotjsx.Core;
+using ntdotjsx.Mechanics;
+using ntdotjsx.Model;
 using UnityEngine;
-using static Platformer.Core.Simulation;
+using static ntdotjsx.Core.Simulation;
 
-namespace Platformer.Gameplay
+namespace ntdotjsx.Gameplay
 {
     public class PlayerEnemyCollision : Simulation.Event<PlayerEnemyCollision>
     {
         public EnemyController enemy;
         public PlayerController player;
 
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         public override void Execute()
         {

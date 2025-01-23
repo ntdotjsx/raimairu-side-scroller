@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Platformer.Mechanics;
+using ntdotjsx.Mechanics;
 
-public class PlatformerSpeedPad : MonoBehaviour
+public class ntdotjsxSpeedPad : MonoBehaviour
 {
     public float maxSpeed;
 

@@ -1,9 +1,9 @@
-using Platformer.Gameplay;
+using ntdotjsx.Gameplay;
 using UnityEngine;
-using static Platformer.Core.Simulation;
+using static ntdotjsx.Core.Simulation;
 
 
-namespace Platformer.Mechanics
+namespace ntdotjsx.Mechanics
 {
     [RequireComponent(typeof(Collider2D))]
     public class TokenInstance : MonoBehaviour

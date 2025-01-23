@@ -1,4 +1,4 @@
-﻿namespace Platformer.Core
+﻿namespace ntdotjsx.Core
 {
     public static partial class Simulation
     {

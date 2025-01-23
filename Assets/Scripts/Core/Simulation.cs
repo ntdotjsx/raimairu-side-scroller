@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Platformer.Core
+namespace ntdotjsx.Core
 {
     public static partial class Simulation
     {

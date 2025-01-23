@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using Platformer.Mechanics;
+using ntdotjsx.Mechanics;
 
-public class PlatformerJumpPad : MonoBehaviour
+public class ntdotjsxJumpPad : MonoBehaviour
 {
     public float verticalVelocity;
 

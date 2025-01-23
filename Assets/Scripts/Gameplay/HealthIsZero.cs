@@ -1,8 +1,8 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using static Platformer.Core.Simulation;
+using ntdotjsx.Core;
+using ntdotjsx.Mechanics;
+using static ntdotjsx.Core.Simulation;
 
-namespace Platformer.Gameplay
+namespace ntdotjsx.Gameplay
 {
     public class HealthIsZero : Simulation.Event<HealthIsZero>
     {

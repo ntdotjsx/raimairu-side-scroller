@@ -1,16 +1,16 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using Platformer.Model;
+using ntdotjsx.Core;
+using ntdotjsx.Mechanics;
+using ntdotjsx.Model;
 using UnityEngine;
 
-namespace Platformer.Gameplay
+namespace ntdotjsx.Gameplay
 {
     public class PlayerTokenCollision : Simulation.Event<PlayerTokenCollision>
     {
         public PlayerController player;
         public TokenInstance token;
 
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         public override void Execute()
         {

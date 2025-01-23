@@ -10,7 +10,7 @@ public class EmitParticlesOnLand : MonoBehaviour
     public bool emitOnLand = true;
     public bool emitOnEnemyDeath = true;
 
-#if UNITY_TEMPLATE_PLATFORMER
+#if UNITY_TEMPLATE_NTDOTJSX
 
     ParticleSystem p;
 
@@ -19,15 +19,15 @@ public class EmitParticlesOnLand : MonoBehaviour
         p = GetComponent<ParticleSystem>();
 
         if (emitOnLand) {
-            Platformer.Gameplay.PlayerLanded.OnExecute += PlayerLanded_OnExecute;
-            void PlayerLanded_OnExecute(Platformer.Gameplay.PlayerLanded obj) {
+            ntdotjsx.Gameplay.PlayerLanded.OnExecute += PlayerLanded_OnExecute;
+            void PlayerLanded_OnExecute(ntdotjsx.Gameplay.PlayerLanded obj) {
                 p.Play();
             }
         }
 
         if (emitOnEnemyDeath) {
-            Platformer.Gameplay.EnemyDeath.OnExecute += EnemyDeath_OnExecute;
-            void EnemyDeath_OnExecute(Platformer.Gameplay.EnemyDeath obj) {
+            ntdotjsx.Gameplay.EnemyDeath.OnExecute += EnemyDeath_OnExecute;
+            void EnemyDeath_OnExecute(ntdotjsx.Gameplay.EnemyDeath obj) {
                 p.Play();
             }
         }

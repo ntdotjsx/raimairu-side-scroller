@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Platformer.Mechanics
+namespace ntdotjsx.Mechanics
 {
     public class KinematicObject : MonoBehaviour
     {

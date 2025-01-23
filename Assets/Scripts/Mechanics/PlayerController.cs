@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Platformer.Gameplay;
-using static Platformer.Core.Simulation;
-using Platformer.Model;
-using Platformer.Core;
+using ntdotjsx.Gameplay;
+using static ntdotjsx.Core.Simulation;
+using ntdotjsx.Model;
+using ntdotjsx.Core;
 
-namespace Platformer.Mechanics
+namespace ntdotjsx.Mechanics
 {
     public class PlayerController : KinematicObject
     {
@@ -27,7 +27,7 @@ namespace Platformer.Mechanics
         Vector2 move;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
-        readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        readonly ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         public Bounds Bounds => collider2d.bounds;
 

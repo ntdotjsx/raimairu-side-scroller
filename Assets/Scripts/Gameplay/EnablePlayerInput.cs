@@ -1,11 +1,11 @@
-using Platformer.Core;
-using Platformer.Model;
+using ntdotjsx.Core;
+using ntdotjsx.Model;
 
-namespace Platformer.Gameplay
+namespace ntdotjsx.Gameplay
 {
     public class EnablePlayerInput : Simulation.Event<EnablePlayerInput>
     {
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         public override void Execute()
         {

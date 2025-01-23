@@ -1,14 +1,14 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using Platformer.Model;
+using ntdotjsx.Core;
+using ntdotjsx.Mechanics;
+using ntdotjsx.Model;
 
-namespace Platformer.Gameplay
+namespace ntdotjsx.Gameplay
 {
     public class PlayerEnteredDeathZone : Simulation.Event<PlayerEnteredDeathZone>
     {
         public DeathZone deathzone;
 
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         public override void Execute()
         {

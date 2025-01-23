@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Platformer.Core;
-using Platformer.Model;
+using ntdotjsx.Core;
+using ntdotjsx.Model;
 using UnityEngine;
 
-namespace Platformer.Mechanics
+namespace ntdotjsx.Mechanics
 {
     [RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
     public class AnimationController : KinematicObject
@@ -17,7 +17,7 @@ namespace Platformer.Mechanics
 
         SpriteRenderer spriteRenderer;
         Animator animator;
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
         protected virtual void Awake()
         {

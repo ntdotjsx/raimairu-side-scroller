@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Platformer.Core
+namespace ntdotjsx.Core
 {
     /// <summary>
     /// HeapQueue provides a queue collection that is always ordered.
