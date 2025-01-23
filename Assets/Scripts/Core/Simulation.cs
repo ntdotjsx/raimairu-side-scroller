@@ -5,21 +5,12 @@ using UnityEngine;
 
 namespace Platformer.Core
 {
-    /// <summary>
-    /// The Simulation class implements the discrete event simulator pattern.
-    /// Events are pooled, with a default capacity of 4 instances.
-    /// </summary>
     public static partial class Simulation
     {
 
         static HeapQueue<Event> eventQueue = new HeapQueue<Event>();
         static Dictionary<System.Type, Stack<Event>> eventPools = new Dictionary<System.Type, Stack<Event>>();
 
-        /// <summary>
-        /// Create a new event of type T and return it, but do not schedule it.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
         static public T New<T>() where T : Event, new()
         {
             Stack<Event> pool;
@@ -35,20 +26,10 @@ namespace Platformer.Core
                 return new T();
         }
 
-        /// <summary>
-        /// Clear all pending events and reset the tick to 0.
-        /// </summary>
         public static void Clear()
         {
             eventQueue.Clear();
         }
-
-        /// <summary>
-        /// Schedule an event for a future tick, and return it.
-        /// </summary>
-        /// <returns>The event.</returns>
-        /// <param name="tick">Tick.</param>
-        /// <typeparam name="T">The event type parameter.</typeparam>
         static public T Schedule<T>(float tick = 0) where T : Event, new()
         {
             var ev = New<T>();
@@ -56,53 +37,24 @@ namespace Platformer.Core
             eventQueue.Push(ev);
             return ev;
         }
-
-        /// <summary>
-        /// Reschedule an existing event for a future tick, and return it.
-        /// </summary>
-        /// <returns>The event.</returns>
-        /// <param name="tick">Tick.</param>
-        /// <typeparam name="T">The event type parameter.</typeparam>
         static public T Reschedule<T>(T ev, float tick) where T : Event, new()
         {
             ev.tick = Time.time + tick;
             eventQueue.Push(ev);
             return ev;
         }
-
-        /// <summary>
-        /// Return the simulation model instance for a class.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
         static public T GetModel<T>() where T : class, new()
         {
             return InstanceRegister<T>.instance;
         }
-
-        /// <summary>
-        /// Set a simulation model instance for a class.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
         static public void SetModel<T>(T instance) where T : class, new()
         {
             InstanceRegister<T>.instance = instance;
         }
-
-        /// <summary>
-        /// Destroy the simulation model instance for a class.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
         static public void DestroyModel<T>() where T : class, new()
         {
             InstanceRegister<T>.instance = null;
         }
-
-        /// <summary>
-        /// Tick the simulation. Returns the count of remaining events.
-        /// If remaining events is zero, the simulation is finished unless events are
-        /// injected from an external system via a Schedule() call.
-        /// </summary>
-        /// <returns></returns>
         static public int Tick()
         {
             var time = Time.time;
