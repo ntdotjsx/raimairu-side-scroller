@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Gameplay\HealthIsZero.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PatrolPath.Mover.cs" />
     <Compile Include="Assets\Scripts\Core\Fuzzy.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\GameManager.cs" />
     <Compile Include="Assets\Scripts\Mechanics\DeathZone.cs" />
     <Compile Include="Assets\Scripts\Model\PlatformerModel.cs" />
     <Compile Include="Assets\Scripts\UI\MetaGameController.cs" />
