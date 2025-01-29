@@ -21,7 +21,18 @@ namespace ntdotjsx.Mechanics
         public void Decrement()
         {
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
-            Debug.Log($"Health Decremented: {currentHP} HP left"); // ✅ Debug ตรวจสอบค่า HP
+            // Debug.Log($"Health Decremented: {currentHP} HP left"); // ✅ Debug ตรวจสอบค่า HP
+            if (currentHP == 0)
+            {
+                var ev = Schedule<HealthIsZero>();
+                ev.health = this;
+            }
+        }
+
+        public void SetZero()
+        {
+            currentHP = 0;
+            Debug.Log("SetZero");
             if (currentHP == 0)
             {
                 var ev = Schedule<HealthIsZero>();

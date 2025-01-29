@@ -13,6 +13,14 @@ namespace ntdotjsx.Mechanics
             var p = collider.gameObject.GetComponent<PlayerController>();
             if (p != null)
             {
+                var playerHealth = p.GetComponent<Health>();
+                if (playerHealth != null)
+                {
+                    if (playerHealth.CurrentHP != 0)
+                    {
+                        playerHealth.SetZero();
+                    }
+                }
                 var ev = Schedule<PlayerEnteredDeathZone>();
                 ev.deathzone = this;
             }

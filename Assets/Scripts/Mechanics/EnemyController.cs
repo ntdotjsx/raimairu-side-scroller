@@ -15,7 +15,7 @@ namespace ntdotjsx.Mechanics
         internal PatrolPath.Mover mover;
         internal AnimationController control;
         internal Collider2D _collider;
-        public bool isDead { get; private set; } = false; // เพิ่มตัวแปรตรวจสอบสถานะการตาย
+        public bool isDead { get; private set; } = false;
         internal AudioSource _audio;
         SpriteRenderer spriteRenderer;
 
@@ -37,6 +37,7 @@ namespace ntdotjsx.Mechanics
                 var ev = Schedule<PlayerEnemyCollision>();
                 ev.player = player;
                 ev.enemy = this;
+                // player.Bounce(7);
             }
         }
 
@@ -71,11 +72,11 @@ namespace ntdotjsx.Mechanics
             }
         }
 
-        // ฟังก์ชันแสดงข้อความ Victory
+        // 👌 Victory แล้ว
         private static void OnVictory()
         {
             Debug.Log("You have won the game!");
-            // สามารถเพิ่มโค้ดเปลี่ยน Scene หรือแสดง UI ที่นี่
+            var ev = Schedule<PlayerVictory>();
         }
 
         void Update()

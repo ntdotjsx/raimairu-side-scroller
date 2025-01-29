@@ -16,9 +16,10 @@ namespace ntdotjsx.Gameplay
         public override void Execute()
         {
             var willHurtEnemy = player.Bounds.center.y >= enemy.Bounds.max.y;
-
+            player.Bounce(7);
             if (willHurtEnemy)
             {
+                player.Bounce(7);
                 var enemyHealth = enemy.GetComponent<Health>();
                 if (enemyHealth != null)
                 {
@@ -26,7 +27,7 @@ namespace ntdotjsx.Gameplay
                     if (!enemyHealth.IsAlive)
                     {
                         Schedule<EnemyDeath>().enemy = enemy;
-                        player.Bounce(2);
+                        player.Bounce(7);
                     }
                     else
                     {
@@ -36,7 +37,7 @@ namespace ntdotjsx.Gameplay
                 else
                 {
                     Schedule<EnemyDeath>().enemy = enemy;
-                    player.Bounce(2);
+                    player.Bounce(7);
                 }
             }
             else
@@ -46,19 +47,15 @@ namespace ntdotjsx.Gameplay
                 {
                     if (playerHealth.CurrentHP != 0)
                     {
+                        player.Bounce(7);
+                        player.animator.SetTrigger("hurt");
                         playerHealth.Decrement();
                         Debug.Log("Player hit! Remaining HP: {playerHealth.CurrentHP}"); // ✅ Debug ตรวจสอบค่า HP
-
-                        if (playerHealth.CurrentHP <= 0) // ✅ แก้เงื่อนไขให้ชัดเจน
+                        if (playerHealth.CurrentHP <= 0)
                         {
                             Schedule<PlayerDeath>();
                         }
-                        else
-                        {
-                            player.Bounce(3); // เด้งเล็กน้อยเมื่อโดนโจมตี
-                        }
                     }
-
                 }
                 else
                 {
