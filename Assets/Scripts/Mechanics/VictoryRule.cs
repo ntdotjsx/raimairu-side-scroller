@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class VictoryRule : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int enemyCount = 1; // จำนวนศัตรูที่ต้องกำจัดเพื่อชนะ
+    public string victoryMessage = "Victory!"; // ข้อความแจ้งเตือนเมื่อชนะ
 
-    // Update is called once per frame
     void Update()
     {
-        
+        CheckVictory();
+    }
+
+    void CheckVictory()
+    {
+        if (enemyCount <= 0)
+        {
+            Debug.Log(victoryMessage);
+            OnVictory();
+        }
+    }
+
+    void OnVictory()
+    {
+        // สามารถเพิ่มโค้ดเพื่อเปลี่ยน Scene หรือแสดง UI แจ้งเตือน
+        Debug.Log("You have won the game!");
+    }
+
+    public void EnemyDefeated()
+    {
+        enemyCount--;
+        CheckVictory();
     }
 }
