@@ -4,9 +4,8 @@ using ntdotjsx.Model;
 
 namespace ntdotjsx.Gameplay
 {
-    public class PlayerEnteredVictoryZone : Simulation.Event<PlayerEnteredVictoryZone>
+    public class PlayerVictory : Simulation.Event<PlayerVictory>
     {
-        public VictoryZone victoryZone;
 
         ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
 
