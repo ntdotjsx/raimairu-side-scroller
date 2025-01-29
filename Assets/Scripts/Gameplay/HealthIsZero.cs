@@ -1,6 +1,7 @@
 using ntdotjsx.Core;
 using ntdotjsx.Mechanics;
 using static ntdotjsx.Core.Simulation;
+using UnityEngine; 
 
 namespace ntdotjsx.Gameplay
 {
@@ -10,7 +11,10 @@ namespace ntdotjsx.Gameplay
 
         public override void Execute()
         {
-            Schedule<PlayerDeath>();
+            var ev = Schedule<PlayerDeath>();
+            Debug.Log("PlayerDeath event scheduled");
+
         }
     }
+
 }

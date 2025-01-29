@@ -44,18 +44,21 @@ namespace ntdotjsx.Gameplay
                 var playerHealth = player.GetComponent<Health>();
                 if (playerHealth != null)
                 {
-                    playerHealth.Decrement();
-                    Debug.Log($"Player hit! Remaining HP: {playerHealth.CurrentHP}"); // ✅ Debug ตรวจสอบค่า HP
+                    if (playerHealth.CurrentHP != 0)
+                    {
+                        playerHealth.Decrement();
+                        Debug.Log("Player hit! Remaining HP: {playerHealth.CurrentHP}"); // ✅ Debug ตรวจสอบค่า HP
 
-                    if (playerHealth.CurrentHP <= 0) // ✅ แก้เงื่อนไขให้ชัดเจน
-                    {
-                        Debug.Log("Player has died!"); // ✅ Debug เช็คว่าผู้เล่นตายจริงหรือไม่
-                        Schedule<PlayerDeath>();
+                        if (playerHealth.CurrentHP <= 0) // ✅ แก้เงื่อนไขให้ชัดเจน
+                        {
+                            Schedule<PlayerDeath>();
+                        }
+                        else
+                        {
+                            player.Bounce(3); // เด้งเล็กน้อยเมื่อโดนโจมตี
+                        }
                     }
-                    else
-                    {
-                        player.Bounce(3); // เด้งเล็กน้อยเมื่อโดนโจมตี
-                    }
+
                 }
                 else
                 {
