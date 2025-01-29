@@ -15,6 +15,7 @@ namespace ntdotjsx.Mechanics
         internal PatrolPath.Mover mover;
         internal AnimationController control;
         internal Collider2D _collider;
+        public bool isDead { get; private set; } = false; // เพิ่มตัวแปรตรวจสอบสถานะการตาย
         internal AudioSource _audio;
         SpriteRenderer spriteRenderer;
 
@@ -39,14 +40,51 @@ namespace ntdotjsx.Mechanics
             }
         }
 
+        // ฟังก์ชันเมื่อศัตรูตาย
+        public void Defeat()
+        {
+            if (isDead) return; // ถ้าศัตรูตายแล้วไม่ต้องทำอะไรซ้ำ
+            isDead = true;
+            CheckVictory(); // เช็คว่าเกมชนะหรือยัง
+        }
+
+        // ฟังก์ชันเช็คว่าเกมชนะหรือยัง
+        public static void CheckVictory()
+        {
+            EnemyController[] enemies = FindObjectsOfType<EnemyController>(); // ค้นหาศัตรูทั้งหมดในฉาก
+            bool allEnemiesDefeated = true;
+
+            foreach (var enemy in enemies)
+            {
+                // ถ้ายังมีศัตรูที่ยังไม่ตาย
+                if (!enemy.isDead)
+                {
+                    allEnemiesDefeated = false;
+                    break; // ถ้ามีศัตรูที่ยังไม่ตายให้หยุดตรวจสอบ
+                }
+            }
+
+            if (allEnemiesDefeated)
+            {
+                Debug.Log("Victory!");
+                OnVictory(); // ถ้าศัตรูทั้งหมดตายแล้ว
+            }
+        }
+
+        // ฟังก์ชันแสดงข้อความ Victory
+        private static void OnVictory()
+        {
+            Debug.Log("You have won the game!");
+            // สามารถเพิ่มโค้ดเปลี่ยน Scene หรือแสดง UI ที่นี่
+        }
+
         void Update()
         {
-            if (path != null)
+            if (path != null && !isDead) // ถ้าศัตรูตายแล้วจะไม่เคลื่อนที่
             {
                 if (mover == null) mover = path.CreateMover(control.maxSpeed * 0.5f);
                 control.move.x = Mathf.Clamp(mover.Position.x - transform.position.x, -1, 1);
             }
         }
-
     }
 }

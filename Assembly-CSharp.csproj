@@ -92,7 +92,6 @@
     <Compile Include="Assets\Scripts\Gameplay\PlayerVictory.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\SimpleTrigger.cs" />
-    <Compile Include="Assets\Scripts\Mechanics\VictoryRule.cs" />
     <Compile Include="Assets\Scripts\Mechanics\ItemController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Health.cs" />

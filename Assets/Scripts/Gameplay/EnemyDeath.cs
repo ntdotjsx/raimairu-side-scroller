@@ -13,6 +13,8 @@ namespace ntdotjsx.Gameplay
             enemy.control.enabled = false;
             if (enemy._audio && enemy.ouch)
                 enemy._audio.PlayOneShot(enemy.ouch);
+
+            enemy.Defeat();
         }
     }
 }
