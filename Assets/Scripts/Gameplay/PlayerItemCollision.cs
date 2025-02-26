@@ -10,9 +10,7 @@ namespace ntdotjsx.Gameplay
     {
         public ItemController item;
         public PlayerController player;
-
         ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
-
         public override void Execute()
         {
 

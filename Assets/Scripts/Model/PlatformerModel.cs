@@ -11,5 +11,6 @@ namespace ntdotjsx.Model
         public Transform spawnPoint;
         public float jumpModifier = 1.5f;
         public float jumpDeceleration = 0.5f;
+        public GameObject gameOverUI;
     }
 }

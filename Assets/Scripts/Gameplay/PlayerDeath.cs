@@ -9,13 +9,14 @@ namespace ntdotjsx.Gameplay
     public class PlayerDeath : Simulation.Event<PlayerDeath>
     {
         ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
+
         public override void Execute()
         {
             var player = model.player;
 
             if (player.health.IsAlive)
             {
-                // ✅ Player ยังไม่ตายให้มันทำเหี้ยไรดี
+                // ✅ Player ยังไม่ตาย
             }
             else
             {
@@ -27,14 +28,21 @@ namespace ntdotjsx.Gameplay
                 if (player.audioSource && player.ouchAudio)
                     player.audioSource.PlayOneShot(player.ouchAudio);
 
-                // 📄 ให้เล่น Animotion ก่อนส่งแม่งไปเกิด
+                // 📄 เล่น Animation ตาย
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
 
+                // ✅ แสดง UI Game Over ถ้ามี
+                if (model.gameOverUI != null)
+                {
+                    model.gameOverUI.SetActive(true);
+                }
+
+                Debug.Log("Game Over UI: " + model.gameOverUI);
+
+                // 😁 Schedule การเกิดใหม่
                 Simulation.Schedule<PlayerSpawn>(2);
-                // 😁 ตายห่าและส่งไปเกิดใหม่
             }
         }
-
     }
 }
