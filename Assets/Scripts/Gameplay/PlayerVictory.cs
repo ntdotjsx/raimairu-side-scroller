@@ -12,7 +12,13 @@ namespace ntdotjsx.Gameplay
         {
             model.player.animator.SetTrigger("victory");
             model.player.controlEnabled = false;
-            GameManager.Instance.TriggerSceneChange(GameManager.Instance.nextSceneName);
+
+            if (model.gameVicUI != null)
+            {
+                model.gameVicUI.SetActive(true);
+            }
+
+            GameManager.Instance.TriggerSceneChange();
         }
     }
 }

@@ -12,5 +12,6 @@ namespace ntdotjsx.Model
         public float jumpModifier = 1.5f;
         public float jumpDeceleration = 0.5f;
         public GameObject gameOverUI;
+        public GameObject gameVicUI;
     }
 }

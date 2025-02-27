@@ -6,7 +6,6 @@ namespace ntdotjsx.Gameplay
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        public string nextSceneName = "NextSceneName";
 
         private void Awake()
         {
@@ -21,16 +20,27 @@ namespace ntdotjsx.Gameplay
             }
         }
 
-        // ฟังก์ชันที่จะใช้ในการเปลี่ยน Scene
-        public void TriggerSceneChange(string sceneName)
+        // ฟังก์ชันที่จะใช้ในการเปลี่ยน Scene ถัดไป
+        public void TriggerSceneChange()
         {
-            StartCoroutine(WaitAndChangeScene(sceneName));
+            StartCoroutine(WaitAndChangeScene());
         }
 
-        private IEnumerator WaitAndChangeScene(string sceneName)
+        private IEnumerator WaitAndChangeScene()
         {
-            yield return new WaitForSeconds(3f);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            yield return new WaitForSeconds(3f); // รอ 3 วินาที
+            int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            int nextSceneIndex = currentSceneIndex + 1; // ไปยัง Scene ถัดไปใน Build Settings
+
+            // ตรวจสอบว่า Scene ถัดไปมีอยู่หรือไม่
+            if (nextSceneIndex < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                Debug.LogWarning("No next scene found in the Build Settings.");
+            }
         }
     }
 }
