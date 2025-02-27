@@ -8,7 +8,7 @@ namespace ntdotjsx.Gameplay
 {
     public class PlayerItemCollision : Simulation.Event<PlayerItemCollision>
     {
-        public ItemController item;
+        public ItemPickup item;
         public PlayerController player;
         ntdotjsxModel model = Simulation.GetModel<ntdotjsxModel>();
         public override void Execute()

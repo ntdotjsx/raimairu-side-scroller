@@ -15,12 +15,11 @@ namespace ntdotjsx.Mechanics
         public int CurrentHP => currentHP;
 
         // เพิ่มพลังชีวิต
-        public void Increment(int amount = 1)
+        public void Increment(int amount = 1) // สามารถกำหนดค่าการเพิ่มเลือดได้
         {
-            // เพิ่มพลังชีวิตตาม amount ที่กำหนด
             currentHP = Mathf.Clamp(currentHP + amount, 0, maxHP);
-            Debug.Log($"Health Incremented: {currentHP} HP");
         }
+
 
         // ลดพลังชีวิต
         public void Decrement(int amount = 1)

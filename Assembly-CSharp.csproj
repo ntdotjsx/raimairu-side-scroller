@@ -94,7 +94,6 @@
     <Compile Include="Assets\Scripts\Gameplay\PlayerVictory.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\SimpleTrigger.cs" />
-    <Compile Include="Assets\Scripts\Mechanics\ItemController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Health.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Backend\TemplateEditorDetection.cs" />
@@ -104,6 +103,7 @@
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerJumpPad.cs" />
     <Compile Include="Assets\Scripts\View\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\ItemPickup.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerItemCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayerController.cs" />
